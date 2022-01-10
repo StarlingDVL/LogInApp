@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    private let userName = "User"
+    private let password = "Password"
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
         welcomeVC.userName = userNameTextField.text ?? ""
@@ -21,17 +24,17 @@ class ViewController: UIViewController {
         guard let inputName = userNameTextField.text else { return }
         guard let inputPassword = passwordTextField.text else { return }
         
-        if inputName != "User" || inputPassword != "Password" {
+        if inputName != userName || inputPassword != password {
             showAlert(title: "Wrong user name or password", message: "Please try again")
         }
     }
     
     @IBAction func forgotUNButtonPressed() {
-        showHelp(title: "Oops!😉", message: "Your user name is User")
+        showHelp(title: "Oops!😉", message: "Your user name is \(userName)")
     }
     
     @IBAction func forgotPWButtonPressed() {
-        showHelp(title: "Oops!😉", message: "Your password is Password")
+        showHelp(title: "Oops!😉", message: "Your password is \(password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
@@ -57,8 +60,12 @@ extension ViewController {
         present(help, animated: true)
         help.addAction(thanksAction)
     }
-    
 }
 
-
+extension ViewController {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+}
 
