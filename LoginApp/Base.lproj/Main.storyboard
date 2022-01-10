@@ -42,7 +42,7 @@
                                     <segue destination="d1Y-Dn-hTO" kind="presentation" id="Blf-xi-yTR"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eLJ-x7-uJu" userLabel="Help buttons Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="eLJ-x7-uJu" userLabel="Help buttons Stack View">
                                 <rect key="frame" x="16" y="503" width="382" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-xs-fpu">
